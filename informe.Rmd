@@ -1,4 +1,4 @@
----
+names---
 title: "Regresión lineal simple"
 author: "Alex E. Pérez Tatamués"
 date: "3 de julio de 2015"
@@ -65,10 +65,9 @@ unidades._
 __Interpretación $R^2$:__ _El modelo de regresión lineal obtenido explica el `r paste(100*summary(reg)$r.squared,"%")` de la variabilidad total._
 
 ### Pruebas de hipótesis
-
-__Ejercicio lector__
-
-
+Como $t=`r summary(reg)$coefficients[2,3]`$ es `r tex<-"menor"; if(summary(reg)$coefficients[2,3]>qt(0.975,(nrow(data)-2))) tex<-"mayor"; tex` que $t_{`r (nrow(data)-2)`}(\frac{1-\alpha}{2})= `r qt(0.975,(nrow(data)-2))`$
+`r tex<-"no rechazo"; if(summary(reg)$coefficients[2,3]>qt(0.975,(nrow(data)-2))) tex<-"rechazo"; tex`
+$H_0: \beta_2=0$.
 
 ### Análisis de varianza
 
